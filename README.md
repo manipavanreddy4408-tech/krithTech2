@@ -1,69 +1,78 @@
-krithTech2
+# krithTech2 — Round 2 Prototype
 
-A full-stack portfolio prototype built with React + TypeScript + Vite on the frontend and Node.js + Express on the backend.
+> A full-stack AI-powered portfolio prototype built with React, TypeScript, Vite, Node.js, and Express.
 
-The project provides a personal portfolio interface with profile information, projects, and an AI-powered chat feature.
+## Overview
 
-⸻
+**krithTech2** is the Round 2 prototype of the portfolio application. It combines a modern React frontend with an Express backend and an AI-powered chat assistant.
 
-🚀 Features
+The prototype is designed to present profile information, showcase projects, and allow visitors to interact with an AI assistant through a clean portfolio interface.
 
-* 👤 Personal profile section
-* 💻 Projects showcase
-* 🤖 AI-powered chat assistant
-* 📂 Portfolio/project information
-* 📱 Responsive frontend
-* ⚡ Fast Vite development server
-* 🔐 Environment-variable based API key configuration
-* 🌐 REST API using Express.js
-* 🧩 Separate frontend and backend architecture
+## Highlights
 
-⸻
+- Modern responsive portfolio interface
+- Profile and project information served through REST APIs
+- AI-powered portfolio assistant
+- React + TypeScript frontend
+- Node.js + Express backend
+- Environment-based API key configuration
+- Clear separation between frontend, backend, routes, controllers, services, and data
 
-🛠️ Tech Stack
+## Tech Stack
 
-Frontend
+| Layer | Technology |
+|---|---|
+| Frontend | React, TypeScript, Vite, CSS |
+| Backend | Node.js, Express.js |
+| AI | Gemini / Google AI API |
+| API | REST |
+| Package Manager | npm |
+| Development | VS Code |
 
-* React
-* TypeScript
-* Vite
-* CSS
-* ESLint
+## Architecture
 
-Backend
+```text
+Visitor
+   │
+   ▼
+React + TypeScript Frontend
+   │
+   ├── Profile
+   ├── Projects
+   └── AI Chat
+   │
+   ▼
+Express REST API
+   │
+   ├── Routes
+   ├── Controllers
+   ├── Services
+   └── Data
+   │
+   ▼
+Gemini / Google AI API
+```
 
-* Node.js
-* Express.js
-* REST API
-* Gemini/Google AI API
+## Project Structure
 
-⸻
-
-📁 Project Structure
-
+```text
 krithTech2/
-│
 ├── backend/
 │   ├── controllers/
 │   │   ├── chatController.js
 │   │   ├── profileController.js
 │   │   └── projectController.js
-│   │
 │   ├── data/
 │   │   ├── portfolio.js
 │   │   └── projects.js
-│   │
 │   ├── middleware/
 │   │   └── errorMiddleware.js
-│   │
 │   ├── routes/
 │   │   ├── chatRoutes.js
 │   │   ├── profileRoutes.js
 │   │   └── projectRoutes.js
-│   │
 │   ├── services/
 │   │   └── aiService.js
-│   │
 │   ├── .env
 │   ├── package.json
 │   └── server.js
@@ -77,611 +86,352 @@ krithTech2/
 │
 ├── .gitignore
 └── README.md
+```
 
-⸻
+## Getting Started
 
-⚙️ Requirements
+### Prerequisites
 
-Before running the project, install:
+Make sure the following are installed:
 
-* Node.js
-* npm
-* Git
+- [Node.js](https://nodejs.org/)
+- npm
+- Git
 
-Check whether they are installed:
+Verify your installation:
 
+```bash
 node -v
 npm -v
 git --version
+```
 
-⸻
+### 1. Clone the repository
 
-📥 1. Clone the Repository
-
-Clone the repository:
-
+```bash
 git clone https://github.com/manipavanreddy4408-tech/krithTech2.git
-
-Move into the project:
-
 cd krithTech2
+```
 
-⸻
+### 2. Configure the backend
 
-🔧 2. Backend Setup
-
-Open the backend folder:
-
+```bash
 cd backend
-
-Install backend dependencies:
-
 npm install
-
-⸻
-
-🔐 3. Configure Environment Variables
-
-Inside the backend folder, create a .env file:
-
 touch .env
+```
 
-Add your API key to the .env file.
+Open `backend/.env` and add your API key:
 
-Example:
-
+```env
 GEMINI_API_KEY=your_api_key_here
+```
 
-Replace:
+> **Security:** Never commit `.env` or expose your API key in source code. The repository already ignores `backend/.env`.
 
-your_api_key_here
+### 3. Start the backend
 
-with your actual API key.
+From `krithTech2/backend`:
 
-⚠️ Important
-
-Never upload .env to GitHub.
-
-The project already contains .gitignore rules for:
-
-backend/.env
-node_modules/
-.DS_Store
-
-Your API key should remain only on your local machine.
-
-⸻
-
-▶️ 4. Start the Backend
-
-From the backend directory:
-
+```bash
 node server.js
+```
 
-You should see something similar to:
+The backend runs at:
 
-Server running on http://localhost:5001
-
-The backend will run on:
-
-http://localhost:5001
+`http://localhost:5001`
 
 Keep this terminal running.
 
-⸻
+### 4. Start the frontend
 
-🎨 5. Start the Frontend
+Open a second terminal:
 
-Open a new terminal window.
-
-Go to the project:
-
-cd krithTech2
-
-Then enter the frontend:
-
-cd frontend
-
-Install dependencies:
-
-npm install
-
-Start the Vite development server:
-
-npm run dev
-
-You should see something similar to:
-
-Local: http://localhost:5173/
-
-Open this address in your browser:
-
-http://localhost:5173/
-
-⸻
-
-🚀 Quick Start
-
-After cloning the repository, use these commands.
-
-Terminal 1 — Backend
-
-cd krithTech2/backend
-npm install
-node server.js
-
-Terminal 2 — Frontend
-
+```bash
 cd krithTech2/frontend
 npm install
 npm run dev
+```
+
+The frontend runs at:
+
+`http://localhost:5173`
+
+Open that address in your browser.
+
+## Quick Start
+
+Run the backend in **Terminal 1**:
+
+```bash
+cd krithTech2/backend
+npm install
+node server.js
+```
+
+Run the frontend in **Terminal 2**:
+
+```bash
+cd krithTech2/frontend
+npm install
+npm run dev
+```
 
 Then open:
 
-http://localhost:5173/
+**http://localhost:5173/**
 
-⸻
+## Application Sections
 
-🖥️ Application Blocks & Buttons
+### Home
 
-The portfolio is divided into multiple interactive sections.
+The landing section introduces the portfolio and provides navigation to the main areas of the application.
 
-🏠 Home / Hero Block
+**Primary actions**
 
-The main landing section introduces the portfolio.
+- View Projects — navigates to the projects section
+- Contact / Connect — navigates to the contact or connection area
 
-Buttons
+### Profile
 
-View Projects
+Displays the portfolio owner's profile information, including personal details, education, skills, and introduction.
 
-Opens/navigates to the projects section where the available projects are displayed.
+**API:** `GET /api/profile`
 
-Let’s Connect / Contact
+### Projects
 
-Navigates to the contact or connection section.
+Displays the projects available in the portfolio, including project descriptions, technologies, and project links.
 
-⸻
+**API:** `GET /api/projects`
 
-👤 Profile Block
+**Project actions**
 
-Displays personal information and profile details.
+- View Project — opens the selected project
+- GitHub — opens the corresponding repository when available
 
-Typical information includes:
+### AI Assistant
 
-* Name
-* Role
-* Skills
-* Education
-* Short introduction
+The AI Assistant allows visitors to ask questions about the portfolio and receive responses through the configured AI service.
 
-Profile button
+**Action**
 
-View Profile
+- Send — sends the user's message to the backend AI endpoint
 
-Displays the complete profile information retrieved from the backend.
+**API:** `POST /api/chat`
 
-Backend endpoint:
+### AI Chat Flow
 
-GET /api/profile
-
-⸻
-
-💻 Projects Block
-
-Displays the projects included in the portfolio.
-
-Each project can contain:
-
-* Project name
-* Description
-* Technologies used
-* Project links
-* Project details
-
-Project buttons
-
-View Project
-
-Opens the selected project’s details or external project page.
-
-GitHub
-
-Opens the corresponding GitHub repository when available.
-
-Backend endpoint:
-
-GET /api/projects
-
-⸻
-
-🤖 AI Chat Block
-
-The AI chat section allows the user to interact with the portfolio’s AI assistant.
-
-The assistant can answer questions related to the portfolio and the information provided by the application.
-
-Chat buttons
-
-Send
-
-Sends the entered message to the backend AI service.
-
-The frontend sends the request to:
-
-POST /api/chat
-
-The backend processes the request and communicates with the configured AI service.
-
-Chat flow
-
-User
-  ↓
+```text
+User message
+     ↓
 Frontend Chat UI
-  ↓
+     ↓
 POST /api/chat
-  ↓
+     ↓
 Express Backend
-  ↓
+     ↓
 AI Service
-  ↓
+     ↓
+Gemini / Google AI API
+     ↓
 AI Response
-  ↓
+     ↓
 Frontend
+```
 
-⸻
+## API Reference
 
-🔌 Backend API
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/profile` | Retrieve profile information |
+| GET | `/api/projects` | Retrieve project information |
+| POST | `/api/chat` | Send a message to the AI assistant |
 
-The backend provides REST API endpoints for the frontend.
+### Test profile API
 
-Profile API
-
-Get profile
-
-GET /api/profile
-
-Example:
-
+```bash
 curl http://localhost:5001/api/profile
+```
 
-⸻
+### Test projects API
 
-Projects API
-
-Get projects
-
-GET /api/projects
-
-Example:
-
+```bash
 curl http://localhost:5001/api/projects
+```
 
-⸻
+### Chat request
 
-Chat API
-
-Send a message
-
-POST /api/chat
-
-The frontend sends the user’s message to the backend, which processes it through the AI service.
-
-Example request:
-
+```json
 {
   "message": "Tell me about the projects"
 }
+```
 
-⸻
+## Backend Structure
 
-🧠 Backend Architecture
+The backend follows a simple layered structure:
 
-The backend follows a simple separation of responsibilities.
-
-Request
-   ↓
+```text
 Routes
-   ↓
+  ↓
 Controllers
-   ↓
+  ↓
 Services / Data
-   ↓
+  ↓
 Response
+```
 
-Routes
+- **Routes** — define API endpoints
+- **Controllers** — handle requests and responses
+- **Services** — handle AI-related processing
+- **Data** — stores portfolio and project information
+- **Middleware** — handles common backend errors
 
-Routes define the API endpoints.
+## Development Commands
 
-backend/routes/
+### Backend
 
-Controllers
-
-Controllers handle incoming requests and responses.
-
-backend/controllers/
-
-Services
-
-AI-related processing is handled inside:
-
-backend/services/
-
-Data
-
-Portfolio and project information is maintained inside:
-
-backend/data/
-
-⸻
-
-📦 Installing Dependencies
-
-If dependencies are missing, run:
-
-Backend
-
+```bash
 cd backend
 npm install
+node server.js
+```
 
-Frontend
+### Frontend
 
+```bash
 cd frontend
 npm install
-
-⸻
-
-🧪 Development Commands
-
-Backend
-
-Start backend:
-
-node server.js
-
-Install dependencies:
-
-npm install
-
-⸻
-
-Frontend
-
-Start development server:
-
 npm run dev
+```
 
-Install dependencies:
+### Production build
 
-npm install
-
-Build frontend:
-
+```bash
 npm run build
+```
 
-Preview production build:
+### Preview production build
 
+```bash
 npm run preview
+```
 
-⸻
+## Local Endpoints
 
-🔄 Complete Restart
+| Service | Address |
+|---|---|
+| Frontend | http://localhost:5173/ |
+| Backend | http://localhost:5001/ |
+| Profile API | http://localhost:5001/api/profile |
+| Projects API | http://localhost:5001/api/projects |
+| Chat API | http://localhost:5001/api/chat |
 
-If you close everything and want to start the project again:
+## Troubleshooting
 
-Terminal 1
-
-cd krithTech2/backend
-node server.js
-
-Terminal 2
-
-cd krithTech2/frontend
-npm run dev
-
-Then visit:
-
-http://localhost:5173/
-
-⸻
-
-🐛 Troubleshooting
-
-Backend does not start
-
-Check Node.js:
-
-node -v
-
-Reinstall dependencies:
-
-cd backend
-npm install
-
-Then:
-
-node server.js
-
-⸻
-
-Frontend does not start
-
-Run:
-
-cd frontend
-npm install
-
-Then:
-
-npm run dev
-
-⸻
-
-Port 5001 is already in use
+### Port 5001 is already in use
 
 Find the process:
 
+```bash
 lsof -i :5001
+```
 
-Stop the process:
+Stop it using its PID:
 
+```bash
 kill <PID>
+```
 
-Then restart:
+Then restart the backend:
 
+```bash
 node server.js
+```
 
-⸻
+### Dependencies are missing
 
-AI chat is not responding
+Backend:
 
-First check that the backend is running:
-
-http://localhost:5001
-
-Then check your .env file:
-
-backend/.env
-
-Make sure your API key is present and valid.
-
-Restart the backend after changing .env:
-
-node server.js
-
-⸻
-
-Cannot find module
-
-Reinstall dependencies:
-
-npm install
-
-If the problem occurs in the backend:
-
+```bash
 cd backend
 npm install
+```
 
-If it occurs in the frontend:
+Frontend:
 
+```bash
 cd frontend
 npm install
+```
 
-⸻
+### AI Assistant is not responding
 
-🔒 Security
+1. Confirm the backend is running on port `5001`.
+2. Check that `backend/.env` exists.
+3. Confirm `GEMINI_API_KEY` is configured correctly.
+4. Restart the backend after changing `.env`.
 
-The following files/directories must not be committed:
+```bash
+cd backend
+node server.js
+```
 
-.env
-node_modules/
-.DS_Store
+## Security
 
-Never hardcode an API key inside JavaScript or TypeScript files.
+Never commit sensitive files or credentials.
 
-Use:
+The repository ignores:
 
-GEMINI_API_KEY=your_api_key_here
-
-instead.
-
-If an API key is accidentally exposed, revoke/rotate the key immediately.
-
-⸻
-
-🌿 Git Workflow
-
-After making changes to the project:
-
-Check the current status:
-
-git status
-
-Add the changes:
-
-git add .
-
-Create a commit:
-
-git commit -m "Update portfolio project"
-
-Push to GitHub:
-
-git push origin main
-
-Check status:
-
-git status
-
-Expected result:
-
-Your branch is up to date with 'origin/main'.
-nothing to commit, working tree clean
-
-⸻
-
-🔍 Check What Will Be Committed
-
-Before committing, you can check staged files:
-
-git diff --cached --name-only
-
-Make sure files such as:
-
+```text
 backend/.env
 node_modules/
+.DS_Store
+```
 
-do not appear.
+Before committing changes, verify staged files:
 
-You can specifically check:
+```bash
+git diff --cached --name-only
+```
 
+To specifically check for environment files or `node_modules`:
+
+```bash
 git diff --cached --name-only | grep -E '(^|/)(\.env|node_modules/)'
+```
 
-If there is no output, those files are not staged.
+No output means those paths are not staged.
 
-⸻
+## Git Workflow
 
-📌 Important Commands — Quick Reference
+After making changes:
 
-Purpose	Command
-Clone repository	git clone <repository-url>
-Enter project	cd krithTech2
-Install backend	cd backend && npm install
-Start backend	node server.js
-Install frontend	cd frontend && npm install
-Start frontend	npm run dev
-Build frontend	npm run build
-Check Git status	git status
-Stage changes	git add .
-Commit changes	git commit -m "message"
-Push changes	git push origin main
-Check staged files	git diff --cached --name-only
-Check port 5001	lsof -i :5001
+```bash
+git status
+git add .
+git commit -m "Update portfolio project"
+git push origin main
+git status
+```
 
-⸻
+A clean working tree should show:
 
-🌐 Local URLs
+```text
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+```
 
-Service	URL
-Frontend	http://localhost:5173/
-Backend	http://localhost:5001/
-Profile API	http://localhost:5001/api/profile
-Projects API	http://localhost:5001/api/projects
-Chat API	http://localhost:5001/api/chat
+## Developer
 
-⸻
-
-👨‍💻 Developer
-
-Manipavan Reddy Chandhireddy
-
-B.Tech CSE – Artificial Intelligence & Machine Learning
-
+**Manipavan Reddy Chandhireddy**  
+B.Tech CSE — Artificial Intelligence & Machine Learning  
 VNR VJIET
 
-⸻
+## Repository
 
-⭐ Project
+GitHub: `https://github.com/manipavanreddy4408-tech/krithTech2`
 
-If you find this project useful, consider giving the repository a ⭐ on GitHub.
+---
 
-⸻
+**krithTech2 · Round 2 Prototype**
